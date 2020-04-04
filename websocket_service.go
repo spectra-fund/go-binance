@@ -78,8 +78,8 @@ func (w *Websocket) WsPartialDepthServe(symbol string, levels string, handler Ws
 type WsDepthHandler func(event *WsDepthEvent)
 
 // WsDepthServe serve websocket depth handler with a symbol
-func (w *Websocket) WsDepthServe(symbol string, handler WsDepthHandler, errHandler ErrHandler) (doneC, stopC chan struct{}, err error) {
-	endpoint := fmt.Sprintf("%s/%s@depth", w.baseURL, strings.ToLower(symbol))
+func (w *Websocket) WsDepthServe(symbol string, interval string, handler WsDepthHandler, errHandler ErrHandler) (doneC, stopC chan struct{}, err error) {
+	endpoint := fmt.Sprintf("%s/%s@depth@%s", w.baseURL, strings.ToLower(symbol), interval)
 	cfg := newWsConfig(endpoint)
 	wsHandler := func(message []byte) {
 		j, err := newJSON(message)
