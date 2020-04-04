@@ -118,13 +118,14 @@ func (w *Websocket) WsDepthServe(symbol string, handler WsDepthHandler, errHandl
 
 // WsDepthEvent define websocket depth event
 type WsDepthEvent struct {
-	Event         string `json:"e"`
-	Time          int64  `json:"E"`
-	Symbol        string `json:"s"`
-	UpdateID      int64  `json:"u"`
-	FirstUpdateID int64  `json:"U"`
-	Bids          []Bid  `json:"b"`
-	Asks          []Ask  `json:"a"`
+	Event            string `json:"e"`
+	Time             int64  `json:"E"`
+	Symbol           string `json:"s"`
+	UpdateID         int64  `json:"u"`
+	FirstUpdateID    int64  `json:"U"`
+	PreviousUpdateID int64  `json:"pu"`
+	Bids             []Bid  `json:"b"`
+	Asks             []Ask  `json:"a"`
 }
 
 // WsKlineHandler handle websocket kline event
