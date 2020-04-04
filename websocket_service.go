@@ -92,6 +92,7 @@ func (w *Websocket) WsDepthServe(symbol string, handler WsDepthHandler, errHandl
 		event.Time = j.Get("E").MustInt64()
 		event.Symbol = j.Get("s").MustString()
 		event.UpdateID = j.Get("u").MustInt64()
+		event.PreviousUpdateID = j.Get("pu").MustInt64()
 		event.FirstUpdateID = j.Get("U").MustInt64()
 		bidsLen := len(j.Get("b").MustArray())
 		event.Bids = make([]Bid, bidsLen)
