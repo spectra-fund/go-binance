@@ -2,7 +2,6 @@ package binance
 
 import (
 	"context"
-	"encoding/json"
 )
 
 // MarginTransferService transfer between spot account and margin account

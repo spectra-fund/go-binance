@@ -2,7 +2,6 @@ package binance
 
 import (
 	"context"
-	"encoding/json"
 )
 
 // CreateMarginOrderService create order

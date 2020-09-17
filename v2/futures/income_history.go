@@ -2,7 +2,6 @@ package futures
 
 import (
 	"context"
-	"encoding/json"
 )
 
 // GetIncomeHistoryService get position margin history service

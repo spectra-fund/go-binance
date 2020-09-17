@@ -2,7 +2,6 @@ package futures
 
 import (
 	"context"
-	"encoding/json"
 )
 
 // ChangeLeverageService change user's initial leverage of specific symbol market

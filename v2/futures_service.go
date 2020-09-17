@@ -2,7 +2,6 @@ package binance
 
 import (
 	"context"
-	"encoding/json"
 )
 
 // FuturesTransferService transfer asset between spot account and futures account

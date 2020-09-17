@@ -2,7 +2,6 @@ package futures
 
 import (
 	"context"
-	"encoding/json"
 )
 
 // CreateOrderService create order
