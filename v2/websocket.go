@@ -41,11 +41,9 @@ var wsServe = func(cfg *WsConfig, handler WsHandler, errHandler ErrHandler) (don
 		// Wait for the stopC channel to be closed.  We do that in a
 		// separate goroutine because ReadMessage is a blocking
 		// operation.
-		silent := false
 		go func() {
 			select {
 			case <-stopC:
-				silent = true
 			case <-doneC:
 			}
 			c.Close()
@@ -53,9 +51,7 @@ var wsServe = func(cfg *WsConfig, handler WsHandler, errHandler ErrHandler) (don
 		for {
 			_, message, err := c.ReadMessage()
 			if err != nil {
-				if !silent {
-					errHandler(err)
-				}
+				errHandler(err)
 				return
 			}
 			handler(message)
