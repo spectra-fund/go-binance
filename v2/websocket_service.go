@@ -72,9 +72,9 @@ func (w *Websocket) WsDepthServe(symbol, interval string, handler WsDepthHandler
 
 // WsDepthEvent define websocket depth event
 type WsDepthEvent struct {
-	Event            string     `json:"e"`
-	Time             int64      `json:"E"`
-	Symbol           string     `json:"s"`
+	// Event string `json:"e"`
+	Time int64 `json:"E"`
+	// Symbol           string     `json:"s"`
 	UpdateID         int64      `json:"u"`
 	FirstUpdateID    int64      `json:"U"`
 	PreviousUpdateID int64      `json:"pu"`
@@ -150,17 +150,17 @@ func (w *Websocket) WsAggTradeServe(symbol string, handler WsAggTradeHandler, er
 
 // WsAggTradeEvent define websocket aggregate trade event
 type WsAggTradeEvent struct {
-	Event                 string `json:"e"`
-	Time                  int64  `json:"E"`
-	Symbol                string `json:"s"`
-	AggTradeID            int64  `json:"a"`
-	Price                 string `json:"p"`
-	Quantity              string `json:"q"`
-	FirstBreakdownTradeID int64  `json:"f"`
-	LastBreakdownTradeID  int64  `json:"l"`
-	TradeTime             int64  `json:"T"`
-	IsBuyerMaker          bool   `json:"m"`
-	Placeholder           bool   `json:"M"` // add this field to avoid case insensitive unmarshaling
+	// Event string `json:"e"`
+	// Time                  int64  `json:"E"`
+	// Symbol                string `json:"s"`
+	AggTradeID int64  `json:"a"`
+	Price      string `json:"p"`
+	Quantity   string `json:"q"`
+	// FirstBreakdownTradeID int64  `json:"f"`
+	// LastBreakdownTradeID  int64  `json:"l"`
+	TradeTime    int64 `json:"T"`
+	IsBuyerMaker bool  `json:"m"`
+	Placeholder  bool  `json:"M"` // add this field to avoid case insensitive unmarshaling
 }
 
 // WsTradeHandler handle websocket trade event
